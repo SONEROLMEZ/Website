@@ -1,64 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Soner Olmez</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', Arial, sans-serif;
-            background: #121212;
-            color: #fff;
-            margin: 0;
-            text-align: center;
-        }
-        .navbar {
-            background: #181818;
-            padding: 20px 0;
-        }
-        .navbar h1 {
-            color: #1db954;
-        }
-        .main {
-            padding: 40px 10px;
-        }
-        .player {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #282828;
-            padding: 15px 0;
-        }
-        .player button {
-            background: #1db954;
-            color: #fff;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 50px;
-            font-size: 16px;
-            margin: 0 10px;
-            cursor: pointer;
-        }
-    </style>
+<style>
+div.gallery { display: flex; flex-wrap: wrap; }
+div.gallery-item { margin: 5px; border: 1px solid #ccc; width: 180px; }
+div.gallery-item img { width: 100%; height: auto; }
+div.gallery-item div.desc { padding: 15px; text-align: center; }
+</style>
 </head>
 <body>
-    <div class="navbar">
-        <h1>SONER</h1>
-    </div>
-    <div class="main">
-        <h2>Soner Olmez</h2>
-        <p>Live The Life Fullest.</p>
-        <img src="https://developer.spotify.com/assets/branding-guidelines/icon3@2x.png" width="80" alt="Soner Olmez">
-        <!-- Add more UI for playlist, albums, etc. -->
-    </div>
-    <div class="player">
-        <span>Now Playing: Song Title - Soner Olmez</span>
-        <button>&#9654;</button> <!-- Play -->
-        <button>&#10073;&#10073;</button> <!-- Pause -->
-        <button>&#9193;</button> <!-- Previous -->
-        <button>&#9193;</button> <!-- Next -->
-    </div>
+<div class="gallery">
+  <div class="gallery-item">
+    <a target="_blank" href="portrait1.jpg">
+      <img src="portrait1.jpg" alt="Portrait 1">
+    </a>
+    <div class="desc">Portrait 1</div>
+  </div>
+  <div class="gallery-item">
+    <a target="_blank" href="landscape1.jpg">
+      <img src="landscape1.jpg" alt="Landscape 1">
+    </a>
+    <div class="desc">Landscape 1</div>
+  </div>
+  <div class="gallery-item">
+    <a target="_blank" href="product1.jpg">
+      <img src="product1.jpg" alt="Product 1">
+    </a>
+    <div class="desc">Product 1</div>
+  </div>
+</div>
 </body>
 </html>
