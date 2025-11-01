@@ -1,1 +1,1 @@
-Hello I'm sonar omez which translates to Lastman Standing in English welcome to my website. 
+Hello I'm soner olmez which translates to Lastman Standing in English welcome to my website. 
