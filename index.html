@@ -1,96 +1,105 @@
-element {
-}
-html body {
-  font-family: Roboto,Helvetica Neue,Arial Nova,Nimbus Sans,Arial,sans-serif;
-}
-html body {
-  font-family: Roboto,Helvetica Neue,Arial Nova,Nimbus Sans,Arial,sans-serif;
-}
-body {
-  background-color: var(--primary-bg-color);
-}
-body, html {
-  overflow: hidden;
-  height: 100%;
-}
-body {
-  background-color: var(--primary-bg-color);
-}
-body, html {
-  overflow: hidden;
-  height: 100%;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-:root {
-  --bottom-height: 65px;
-  --global-header-height: 3.5rem;
-  --navigation-drawer-width: 16rem;
-  --sidebar-width: 21rem;
-  --sidebar-entry-height-mobile: 3.5rem;
-  --sidebar-entry-height-desktop: 4rem;
-  --sidebar-header-height-mobile: 6rem;
-  --sidebar-header-height-desktop: 5rem;
-  --sidebar-header-border-radius: 20px;
-  --primary-bg-color: #202124;
-  --content-section-bg-color: #06080C;
-  --nav-drawer-bg-color: #303134;
-  --nav-drawer-item-hover-bg-color: #3c4043;
-  --primary-border-color: #5f6368;
-  --hover-highlight-bg-color: #36373A;
-  --selected-item-bg-color: #64D2FF;
-  --selected-item-text-color: #24242B;
-  --selected-item-text-color-secondary: #2A586B;
-  --highlight-text-color: var(--selected-item-bg-color);
-  --secondary-text-color: #86888A;
-  --hover-secondary-text-color: #B4B8C1;
-  --highlight-red: #FF0000;
-  --brand-accent-color: #79C447;
-  --brand-accent-hover-color: #D2EBC1;
-  --scrollbar-thumb-color: rgba(255, 255, 255, .2);
-  --search-bar-bg: var(--hover-highlight-bg-color);
-  --overlay-background: #000;
-  --modal-content-color: #FFF;
-  --destructive-button-color: #d32f2f;
-  --destructive-button-hover-color: #e53935;
-}
-:root {
-  --bottom-height: 65px;
-  --global-header-height: 3.5rem;
-  --navigation-drawer-width: 16rem;
-  --sidebar-width: 21rem;
-  --sidebar-entry-height-mobile: 3.5rem;
-  --sidebar-entry-height-desktop: 4rem;
-  --sidebar-header-height-mobile: 6rem;
-  --sidebar-header-height-desktop: 5rem;
-  --sidebar-header-border-radius: 20px;
-  --primary-bg-color: #202124;
-  --content-section-bg-color: #06080C;
-  --nav-drawer-bg-color: #303134;
-  --nav-drawer-item-hover-bg-color: #3c4043;
-  --primary-border-color: #5f6368;
-  --hover-highlight-bg-color: #36373A;
-  --selected-item-bg-color: #64D2FF;
-  --selected-item-text-color: #24242B;
-  --selected-item-text-color-secondary: #2A586B;
-  --highlight-text-color: var(--selected-item-bg-color);
-  --secondary-text-color: #86888A;
-  --hover-secondary-text-color: #B4B8C1;
-  --highlight-red: #FF0000;
-  --brand-accent-color: #79C447;
-  --brand-accent-hover-color: #D2EBC1;
-  --scrollbar-thumb-color: rgba(255, 255, 255, .2);
-  --search-bar-bg: var(--hover-highlight-bg-color);
-  --overlay-background: #000;
-  --modal-content-color: #FFF;
-  --destructive-button-color: #d32f2f;
-  --destructive-button-hover-color: #e53935;
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { createPageUrl } from "@/utils";
+import { LayoutDashboard, Image, Video, FileText, Plus } from "lucide-react";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarHeader,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+
+const navigationItems = [
+  {
+    title: "Dashboard",
+    url: createPageUrl("Dashboard"),
+    icon: LayoutDashboard,
+  },
+  {
+    title: "Photos",
+    url: createPageUrl("Photos"),
+    icon: Image,
+  },
+  {
+    title: "Videos",
+    url: createPageUrl("Videos"),
+    icon: Video,
+  },
+  {
+    title: "Notes",
+    url: createPageUrl("Notes"),
+    icon: FileText,
+  },
+];
+
+export default function Layout({ children, currentPageName }) {
+  const location = useLocation();
+
+  return (
+    <SidebarProvider>
+      <div className="min-h-screen flex w-full" style={{ background: '#FAFAF9' }}>
+        <Sidebar className="border-r border-stone-200 bg-white">
+          <SidebarHeader className="border-b border-stone-200 p-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                <Plus className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h2 className="font-bold text-stone-900 text-lg">My Space</h2>
+                <p className="text-xs text-stone-500">Personal Collection</p>
+              </div>
+            </div>
+          </SidebarHeader>
+          
+          <SidebarContent className="p-3">
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {navigationItems.map((item) => {
+                    const isActive = location.pathname === item.url;
+                    return (
+                      <SidebarMenuItem key={item.title}>
+                        <SidebarMenuButton 
+                          asChild 
+                          className={`mb-1 rounded-xl transition-all duration-200 ${
+                            isActive 
+                              ? 'bg-gradient-to-r from-orange-50 to-pink-50 text-orange-600 shadow-sm' 
+                              : 'hover:bg-stone-50'
+                          }`}
+                        >
+                          <Link to={item.url} className="flex items-center gap-3 px-4 py-3">
+                            <item.icon className={`w-5 h-5 ${isActive ? 'text-orange-600' : 'text-stone-400'}`} />
+                            <span className="font-medium">{item.title}</span>
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    );
+                  })}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </SidebarContent>
+        </Sidebar>
+
+        <main className="flex-1 flex flex-col">
+          <header className="bg-white/80 backdrop-blur-sm border-b border-stone-200 px-6 py-4 md:hidden sticky top-0 z-10">
+            <div className="flex items-center gap-4">
+              <SidebarTrigger className="hover:bg-stone-100 p-2 rounded-lg transition-colors duration-200" />
+              <h1 className="text-xl font-bold text-stone-900">My Space</h1>
+            </div>
+          </header>
+
+          <div className="flex-1">
+            {children}
+          </div>
+        </main>
+      </div>
+    </SidebarProvider>
+  );
 }
