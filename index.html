@@ -1,147 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R ÖLMEZ | Last Man Standing</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soner Ölmez</title>
 
-        html, body {
-            width: 100%;
-            height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #ffffff;
-            background-color: #050505;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-        /* Full Screen Cover Background - Base44 Li River Asset */
-        .bg-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 1;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)), 
-                              url('https://last-man-horizon.base44.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbg-totems.0e1f72a4.jpg&w=3840&q=75');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-        }
+body{
+    background:#071e26;
+    color:white;
+}
 
-        /* Foreground Content */
-        .wrapper {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            justify-content: space-between;
-        }
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)),
+    url('sigiriya.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
 
-        /* Top Navigation Overlay */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 50px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-        }
+.hero h1{
+    font-size:4rem;
+}
 
-        .nav-logo {
-            font-weight: 700;
-            letter-spacing: 3px;
-        }
+.hero p{
+    font-size:1.5rem;
+    color:#8cf0c5;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
+.section{
+    padding:80px 10%;
+}
 
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            opacity: 0.75;
-            transition: opacity 0.2s ease-in-out;
-        }
+.card{
+    display:flex;
+    gap:30px;
+    align-items:center;
+    margin-bottom:80px;
+}
 
-        .nav-links a:hover {
-            opacity: 1;
-        }
+.card img{
+    width:50%;
+    border-radius:15px;
+}
 
-        /* Central Overlay Hero Text */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-            margin: auto 0;
-        }
+.text{
+    width:50%;
+}
 
-        .hero-title {
-            font-size: clamp(3.5rem, 12vw, 9rem);
-            font-weight: 900;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            line-height: 0.95;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-            margin-bottom: 15px;
-        }
+.text h2{
+    color:#35c7a5;
+    margin-bottom:15px;
+}
 
-        .hero-subtitle {
-            font-size: 0.85rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            opacity: 0.8;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
-        }
-
-        /* Responsive Navigation for Mobile */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-                padding: 20px;
-            }
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-        }
-    </style>
+footer{
+    text-align:center;
+    padding:40px;
+    background:#031218;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="bg-container"></div>
+<section class="hero">
+<div>
+<h1>SONER ÖLMEZ</h1>
+<p>80 Countries • Traveller • Hospitality Professional</p>
+</div>
+</section>
 
-    <div class="wrapper">
-        <nav>
-            <div class="nav-logo">R ÖLMEZ</div>
-            <div class="nav-links">
-                <a href="totems.html">TOTEMS</a>
-                <a href="horizons.html">HORIZONS</a>
-                <a href="places.html">PLACES</a>
-                <a href="journal.html">JOURNAL</a>
-                <a href="about.html">ABOUT</a>
-                <a href="contact.html">CONTACT</a>
-            </div>
-        </nav>
+<section class="section">
 
-        <main class="hero">
-            <h1 class="hero-title">R ÖLMEZ</h1>
-            <p class="hero-subtitle">LAST MAN STANDING</p>
-        </main>
-    </div>
+<div class="card">
+hollywood.jpg
+<div class="text">
+<h2>Los Angeles</h2>
+<p>Exploring California with the Hollywood Hills behind me.</p>
+</div>
+</div>
+
+<div class="card">
+mecca.jpg
+<div class="text">
+<h2>Saudi Arabia</h2>
+<p>A night view overlooking Mecca from above the city.</p>
+</div>
+</div>
+
+<div class="card">
+worldmap.jpg
+<div class="text">
+<h2>My Journey</h2>
+<p>Visited around 80 countries across Europe, Asia, the Middle East and beyond.</p>
+</div>
+</div>
+
+</section>
+
+<footer>
+© Soner Ölmez
+</footer>
 
 </body>
 </html>
